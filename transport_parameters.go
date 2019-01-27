@@ -3,7 +3,7 @@ package quictracker
 import (
 	"bytes"
 	"fmt"
-	"github.com/QUIC-Tracker/quic-tracker/lib"
+	"github.com/RohitPanda/quic-tracker/lib"
 	"github.com/bifurcation/mint/syntax"
 )
 

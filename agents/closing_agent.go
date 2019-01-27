@@ -1,6 +1,6 @@
 package agents
 
-import . "github.com/QUIC-Tracker/quic-tracker"
+import . "github.com/RohitPanda/quic-tracker"
 
 // The ClosingAgent is responsible for queuing an (CONNECTION|APPLICATION)_CLOSE frame and to wait for it to be sent out.
 type ClosingAgent struct {

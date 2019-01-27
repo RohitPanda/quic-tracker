@@ -2,8 +2,8 @@ package main
 
 import (
 	"os"
-	qt "github.com/QUIC-Tracker/quic-tracker"
-	s "github.com/QUIC-Tracker/quic-tracker/scenarii"
+	qt "github.com/RohitPanda/quic-tracker"
+	s "github.com/RohitPanda/quic-tracker/scenarii"
 	"flag"
 	"strings"
 	"time"

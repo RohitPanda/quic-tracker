@@ -2,8 +2,8 @@ package agents
 
 import (
 	"errors"
-	. "github.com/QUIC-Tracker/quic-tracker"
-	"github.com/QUIC-Tracker/quic-tracker/compat"
+	. "github.com/RohitPanda/quic-tracker"
+	"github.com/RohitPanda/quic-tracker/compat"
 	"github.com/dustin/go-broadcast"
 	"syscall"
 	"unsafe"

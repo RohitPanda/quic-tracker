@@ -1,7 +1,7 @@
 package agents
 
 import (
-	. "github.com/QUIC-Tracker/quic-tracker"
+	. "github.com/RohitPanda/quic-tracker"
 )
 
 // The AckAgent is in charge of queuing ACK frames in response to receiving packets that need to be acknowledged as well

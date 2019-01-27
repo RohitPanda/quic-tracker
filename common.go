@@ -1,5 +1,5 @@
 //
-// QUIC-Tracker is a test suite for QUIC, built upon a minimal client implementation in Go.
+// RohitPanda is a test suite for QUIC, built upon a minimal client implementation in Go.
 // It is currently draft-13 and TLS-1.3-draft-28 compatible.
 //
 // The main package is a toolbox to parse and create QUIC packets of all types. More high-level client behaviours are
@@ -7,7 +7,7 @@
 //
 // Architecture
 //
-// QUIC-Tracker is comprised of three parts.
+// RohitPanda is comprised of three parts.
 //
 // The first is this package, which contains types, methods and functions to
 // parse and create QUIC packets that can be easily manipulated.
@@ -23,7 +23,7 @@
 //
 // License and copyright
 //
-// QUIC-Tracker is licensed under the GNU Affero General Public License version 3. You can find its terms in the
+// RohitPanda is licensed under the GNU Affero General Public License version 3. You can find its terms in the
 // LICENSE file, or at https://www.gnu.org/licenses/agpl.txt.
 //
 // Copyright (C) 2017-2018  Maxime Piraux
@@ -33,7 +33,7 @@ package quictracker
 import (
 	"bytes"
 	"encoding/binary"
-	. "github.com/QUIC-Tracker/quic-tracker/lib"
+	. "github.com/RohitPanda/quic-tracker/lib"
 	_ "github.com/mpiraux/ls-qpack-go"
 	"github.com/mpiraux/pigotls"
 	"math"

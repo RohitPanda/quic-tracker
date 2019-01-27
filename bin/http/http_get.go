@@ -1,7 +1,7 @@
 package main
 
 import (
-	m "github.com/QUIC-Tracker/quic-tracker"
+	m "github.com/RohitPanda/quic-tracker"
 	"flag"
 	"strings"
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"log"
 	"net/http"
 	_ "net/http/pprof"
-	"github.com/QUIC-Tracker/quic-tracker/agents"
+	"github.com/RohitPanda/quic-tracker/agents"
 	"github.com/davecgh/go-spew/spew"
 	"time"
 )

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
-	. "github.com/QUIC-Tracker/quic-tracker"
-	"github.com/QUIC-Tracker/quic-tracker/lib"
+	. "github.com/RohitPanda/quic-tracker"
+	"github.com/RohitPanda/quic-tracker/lib"
 	"io"
 )
 

@@ -1,7 +1,7 @@
 package agents
 
 import (
-	. "github.com/QUIC-Tracker/quic-tracker"
+	. "github.com/RohitPanda/quic-tracker"
 	"github.com/dustin/go-broadcast"
 	"github.com/mpiraux/ls-qpack-go"
 	"math"

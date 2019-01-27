@@ -3,12 +3,12 @@
 //
 // Each agent is responsible for a limited part of the behaviour of a QUIC client. This allows modularity when defining
 // test scenarii with specific needs. Each agent is described in its type documentation. For more information on the
-// architecture of QUIC-Tracker, please consult the package quictracker documentation.
+// architecture of RohitPanda, please consult the package quictracker documentation.
 //
 package agents
 
 import (
-	. "github.com/QUIC-Tracker/quic-tracker"
+	. "github.com/RohitPanda/quic-tracker"
 	"log"
 	"os"
 	"fmt"

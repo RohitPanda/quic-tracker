@@ -2,8 +2,8 @@ package agents
 
 import (
 	"bytes"
-	. "github.com/QUIC-Tracker/quic-tracker"
-	"github.com/QUIC-Tracker/quic-tracker/http3"
+	. "github.com/RohitPanda/quic-tracker"
+	"github.com/RohitPanda/quic-tracker/http3"
 	"github.com/davecgh/go-spew/spew"
 	"github.com/dustin/go-broadcast"
 	"math"
@@ -214,7 +214,7 @@ func (a *HTTPAgent) SendRequest(path, method, authority string, headers map[stri
 	}
 
 	if _, ok := headers["user-agent"]; !ok {
-		headers["user-agent"] = "QUIC-Tracker/" + GitCommit()
+		headers["user-agent"] = "RohitPanda/" + GitCommit()
 	}
 
 	hdrs := []HTTPHeader{
