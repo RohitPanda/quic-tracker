@@ -1,0 +1,5 @@
+quic.ogre.com:4433	/index.html
+nghttp2.org:4433	/index.html
+quant.eggert.org:4433	/index.html
+msquic.westus.cloudapp.azure.com:4433	/index.html
+test.privateoctopus.com:4433	/index.html
