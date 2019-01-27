@@ -8,6 +8,7 @@ import (
 	. "github.com/QUIC-Tracker/quic-tracker"
 	"github.com/dustin/go-broadcast"
 	"strings"
+    "time"
 )
 
 type HandshakeStatus struct {
@@ -17,7 +18,7 @@ type HandshakeStatus struct {
 }
 
 func (s HandshakeStatus) String() string {
-	return fmt.Sprintf("HandshakeStatus{Completed=%t, Error=%s}", s.Completed, s.Error)
+	return fmt.Sprintf("HandshakeStatus{Completed=%t, Error=%s, timestamp=%d}", s.Completed, s.Error, time.Now().UTC().UnixNano()/1000000)
 }
 
 // The HandshakeAgent is responsible for initiating the QUIC handshake and respond to the version negotiation process if
@@ -28,7 +29,6 @@ type HandshakeAgent struct {
 	TLSAgent         *TLSAgent
 	SocketAgent      *SocketAgent
 	HandshakeStatus  broadcast.Broadcaster //type: HandshakeStatus
-	IgnoreRetry 	 bool
 	sendInitial		 chan bool
 	receivedRetry    bool
 }
@@ -60,7 +60,7 @@ func (a *HandshakeAgent) Run(conn *Connection) {
 		for {
 			select {
 			case <-a.sendInitial:
-				a.Logger.Println("Sending first Initial packet")
+				a.Logger.Printf("Sending first Initial packet timestamp=%d", time.Now().UTC().UnixNano()/1000000)
 				conn.SendPacket(conn.GetInitialPacket(), EncryptionLevelInitial)
 			case p := <-incPackets:
 				switch p := p.(type) {
@@ -72,12 +72,10 @@ func (a *HandshakeAgent) Run(conn *Connection) {
 					}
 					conn.SendPacket(conn.GetInitialPacket(), EncryptionLevelInitial)
 				case *RetryPacket:
-					if !a.IgnoreRetry && bytes.Equal(conn.DestinationCID, p.OriginalDestinationCID) && !a.receivedRetry {  // TODO: Check the original_connection_id TP too
+					if bytes.Equal(conn.DestinationCID, p.OriginalDestinationCID) && !a.receivedRetry {  // TODO: Check the original_connection_id TP too
 						a.receivedRetry = true
 						conn.DestinationCID = p.Header().(*LongHeader).SourceCID
-						tlsTP := conn.TLSTPHandler
 						conn.TransitionTo(QuicVersion, QuicALPNToken)
-						conn.TLSTPHandler = tlsTP
 						conn.Token = p.RetryToken
 						a.TLSAgent.Stop()
 						a.TLSAgent.Join()
