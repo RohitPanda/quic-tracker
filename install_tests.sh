@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Add go executable to PATH variable
 #e.g. export PATH=$PATH:/home/panda/Quic-Test/build/go/bin
 
