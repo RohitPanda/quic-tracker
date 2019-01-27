@@ -1,8 +1,8 @@
 A test suite for QUIC
 =====================
 
-.. image:: https://godoc.org/github.com/RohitPanda/quic-tracker?status.svg
-    :target: https://godoc.org/github.com/RohitPanda/quic-tracker
+.. image:: https://godoc.org/github.com/QUIC-Tracker/quic-tracker?status.svg
+    :target: https://godoc.org/github.com/QUIC-Tracker/quic-tracker
     :alt: Documentation status
 
 
